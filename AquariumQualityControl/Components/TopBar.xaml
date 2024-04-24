@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="AquariumQualityControl.Components.TopBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <Grid Height="30"
+          Background="#ECEFF1"
+          VerticalAlignment="Top"
+          MouseMove="TopBar_MouseMove"
+          MouseLeftButtonDown="TopBar_MouseLeftButtonDown">
+        
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,3,0">
+            
+            <Button Click="MinimizeClick" Background="{x:Null}" Height="30" Width="30" BorderBrush="#ECEFF1">
+                <Image Source="/Images/minimize-window-icon.png" Stretch="Uniform" Height="29" Width="29"/>
+            </Button>
+            
+            <Button Click="MaximizeClick" Background="{x:Null}" Height="30" Width="30" BorderBrush="#ECEFF1">
+                <Image Source="/Images/maximize-window-icon.png" Stretch="Uniform" Height="29" Width="29"/>
+            </Button>
+            
+            <Button Click="CloseClick" Background="{x:Null}" Height="30" Width="30" BorderBrush="#ECEFF1">
+                <Image Source="/Images/close-window-icon.png" Stretch="Uniform" Height="29" Width="29"/>
+            </Button>
+            
+        </StackPanel>
+        
+    </Grid>
+    
+</UserControl>

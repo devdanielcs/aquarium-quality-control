@@ -1,10 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <Authors>Daniel Silva</Authors>
+    <Product>Aquarium quality control</Product>
+    <Description>Project created to facilitate the analysis, storage, and monitoring of aquarium water compounds.</Description>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 

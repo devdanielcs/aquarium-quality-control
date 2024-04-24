@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:AquariumQualityControl"
+        xmlns:component="clr-namespace:AquariumQualityControl.Components"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
         WindowStyle="None">
@@ -23,8 +23,8 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="Window">
                         <Border Background="{TemplateBinding Background}"
-                        BorderThickness="{TemplateBinding BorderThickness}"
-                        BorderBrush="{TemplateBinding BorderBrush}">
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                BorderBrush="{TemplateBinding BorderBrush}">
                             <ContentPresenter/>
                         </Border>
                     </ControlTemplate>
@@ -32,41 +32,11 @@
             </Setter>
         </Style>
     </Window.Style>
-    
+
     <Grid>
 
-        <!-- Barra superior personalizada -->
-        <Grid Background="#ECEFF1" VerticalAlignment="Top" Height="30"
-              MouseLeftButtonDown="TopBar_MouseLeftButtonDown"
-              MouseMove="TopBar_MouseMove">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,3,0">
-                <Button Click="MinimizeClick" Background="{x:Null}" Height="30" Width="30" BorderBrush="#ECEFF1">
-                    <Image Source="/Images/minimize-window-icon.png" Stretch="Uniform" Height="29" Width="29"/>
-                </Button>
-                <Button Click="MaximizeClick" Background="{x:Null}" Height="30" Width="30" BorderBrush="#ECEFF1">
-                    <Image Source="/Images/maximize-window-icon.png" Stretch="Uniform" Height="29" Width="29"/>
-                </Button>
-                <Button Click="CloseClick" Background="{x:Null}" Height="30" Width="30" BorderBrush="#ECEFF1">
-                    <Image Source="/Images/close-window-icon.png" Stretch="Uniform" Height="29" Width="29"/>
-                </Button>
-            </StackPanel>
-        </Grid>
-
-
-        <!-- Layout do menu lateral -->
-        <Grid x:Name="menuGrid"
-              Width="150"
-              Background="#0288D1"
-              HorizontalAlignment="Left">
-            <StackPanel>
-                <Button Click="ToggleMenu" Background="{x:Null}" Height="30" Width="30" BorderBrush="#0288D1">
-                    <Image Source="/Images/toggle-menu.png" Stretch="Uniform" Height="20" Width="20"/>
-                </Button>
-                <Button Content="Item 1"/>
-                <Button Content="Item 2"/>
-                <Button Content="Item 3"/>
-            </StackPanel>
-        </Grid>
+        <component:TopBar/>
+        <component:MenuLayout/>
 
     </Grid>
 </Window>
