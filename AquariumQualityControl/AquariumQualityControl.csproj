@@ -12,23 +12,30 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Images\close-window-icon.png" />
-    <None Remove="Images\maximize-window-icon.png" />
-    <None Remove="Images\minimize-window-icon.png" />
-    <None Remove="Images\toggle-menu.png" />
+    <None Remove="Assets\toggle-menu.png" />
+    <None Remove="Assets\TopBar\close-window.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Images\close-window-icon.png">
+    <Resource Include="Assets\TopBar\home.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\maximize-window-icon.png">
+    <Resource Include="Assets\TopBar\nitrate.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\minimize-window-icon.png">
+    <Resource Include="Assets\TopBar\toxic-ammonia.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\toggle-menu.png">
+    <Resource Include="Assets\TopBar\water-kh.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\TopBar\water-ph.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\TopBar\toggle-menu.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\TopBar\close-window.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
