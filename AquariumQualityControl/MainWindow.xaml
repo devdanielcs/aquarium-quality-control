@@ -3,40 +3,86 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:component="clr-namespace:AquariumQualityControl.Components"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
-        WindowStyle="None">
-
-    <Window.Style>
-        <Style TargetType="Window">
-            <Setter Property="AllowsTransparency" Value="True"/>
-            <Setter Property="WindowChrome.WindowChrome">
-                <Setter.Value>
-                    <WindowChrome CaptionHeight="0"/>
-                </Setter.Value>
-            </Setter>
-            <Setter Property="Background" Value="White"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="BorderBrush" Value="Black"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Window">
-                        <Border Background="{TemplateBinding Background}"
-                                BorderThickness="{TemplateBinding BorderThickness}"
-                                BorderBrush="{TemplateBinding BorderBrush}">
-                            <ContentPresenter/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </Window.Style>
+        Title="MainWindow"
+        Height="550"
+        Width="1000"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        WindowStartupLocation="CenterScreen">
 
     <Grid>
 
-        <component:TopBar/>
-        <component:MenuLayout/>
+        <Border Background="#FFFFFF"
+                BorderBrush="#039BE5"
+                BorderThickness="2"
+                CornerRadius="0,0,2,2"/>
+
+        <Grid Height="40"
+              Width="1000"
+              Background="#039BE5"
+              VerticalAlignment="Top"
+              MouseMove="TopBar_MouseMove"
+              MouseLeftButtonDown="TopBar_MouseLeftButtonDown">
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+
+                <Button Click="Load_HomePage" Background="{x:Null}" Height="auto" Width="auto" BorderBrush="{x:Null}" HorizontalContentAlignment="Center">
+                    <StackPanel Orientation="Horizontal" Margin="10,0,10,0">
+                        <Image Source="/Assets/TopBar/home.png" Stretch="Uniform" Height="20" Width="20"/>
+                        <TextBlock Text="Home" VerticalAlignment="Center" Margin="2,0,0,0" Foreground="#FFFFFF"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Click="Load_AmmoniaPage" Background="{x:Null}" Height="auto" Width="auto" BorderBrush="{x:Null}" HorizontalContentAlignment="Center">
+                    <StackPanel Orientation="Horizontal" Margin="10,0,10,0">
+                        <Image Source="/Assets/TopBar/toxic-ammonia.png" Stretch="Uniform" Height="15" Width="15"/>
+                        <TextBlock Text="Amônia tóxica" VerticalAlignment="Center" Margin="4,0,0,0" Foreground="#FFFFFF"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Background="{x:Null}" Height="auto" Width="auto" BorderBrush="{x:Null}" HorizontalContentAlignment="Center">
+                    <StackPanel Orientation="Horizontal" Margin="10,0,10,0">
+                        <Image Source="/Assets/TopBar/water-kh.png" Stretch="Uniform" Height="15" Width="15"/>
+                        <TextBlock Text="Dureza KH" VerticalAlignment="Center" Margin="2.4,0,0,0" Foreground="#FFFFFF"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Background="{x:Null}" Height="auto" Width="auto" BorderBrush="{x:Null}" HorizontalContentAlignment="Center">
+                    <StackPanel Orientation="Horizontal" Margin="10,0,10,0">
+                        <Image Source="/Assets/TopBar/nitrate.png" Stretch="Uniform" Height="15" Width="15"/>
+                        <TextBlock Text="Nitrato" VerticalAlignment="Center" Margin="4.3,0,0,0" Foreground="#FFFFFF"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Background="{x:Null}" Height="auto" Width="auto" BorderBrush="{x:Null}" HorizontalContentAlignment="Center">
+                    <StackPanel Orientation="Horizontal" Margin="10,0,10,0">
+                        <Image Source="/Assets/TopBar/water-ph.png" Stretch="Uniform" Height="20" Width="20"/>
+                        <TextBlock Text="PH" VerticalAlignment="Center" Margin="2.3,0,0,0" Foreground="#FFFFFF"/>
+                    </StackPanel>
+                </Button>
+
+            </StackPanel>
+
+            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Right">
+
+                <Button Click="CloseClick" Background="{x:Null}" Height="auto" Width="auto" Margin="10,0,10,0" BorderBrush="{x:Null}" HorizontalContentAlignment="Center">
+                    <StackPanel Orientation="Horizontal" Margin="10,0,10,0">
+                        <Image Source="/Assets/TopBar/close-window.png" Stretch="Uniform" Height="20" Width="20"/>
+                    </StackPanel>
+                </Button>
+
+            </StackPanel>
+
+        </Grid>
+
+        <Grid
+              Background="AliceBlue" Margin="2,40,2,3">
+            <Frame x:Name="MainFrame" JournalOwnership="UsesParentJournal" />
+        </Grid>
 
     </Grid>
+
 </Window>
